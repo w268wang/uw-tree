@@ -7,9 +7,22 @@ import json
 
 uw = UWaterlooAPI(api_key="7d435b989e48df6956b88dd5248b13dc")
 VALID_DEP = ['AHS', 'ART', 'ENG', 'ENV', 'MAT', 'SCI', 'REN', 'VPA', 'WLU']
+CURRENT_FOLDER = os.path.dirname(os.path.realpath(__file__)) + '/'
+
+SUBJECT_LIST_FILE = 'subject_list.txt'
+COURSE_CAT_FILE = 'courses.txt'
+COURSE_DETAIL_FILE = 'courses_detailed_data.txt'
+PREREQ_LIST_FILE = 'courses_prereq.txt'
 
 # TODO actually use open api
 def update_courses_file():
+    '''
+    Output: Output will get written into a file for future use
+            each line represents courses for a subject, items are splitted by '|'
+            the first item is the subject name and the others are course categories
+    Example: APPLS|205R|301|304R|306R
+    '''
+
     # Get subject code from uwaterloo api endpoint (/codes/subjects.json).
     #raw_subject_list = uw.subject_codes()
 
@@ -19,11 +32,11 @@ def update_courses_file():
     # Retrieve the subject field out of the data
     #subject_list = map(lambda item: item['subject'], valid_raw_subject_list)
 
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/subject_list.txt', 'r') as subject_list_file:
+    with open(CURRENT_FOLDER + SUBJECT_LIST_FILE, 'r') as subject_list_file:
         subject_list = subject_list_file.read().splitlines()
 
     # Output file for course list
-    courses_output_file = open(os.path.dirname(os.path.realpath(__file__)) + '/courses.txt', 'w')
+    courses_output_file = open(CURRENT_FOLDER + COURSE_CAT_FILE, 'w')
     ctr = 0
     for subject in subject_list:
         courses_data = uw.courses(subject)
@@ -46,10 +59,18 @@ def update_courses_file():
 
 
 def get_course_detail():
+    '''
+    Repeatedly call the courses API for details of every single course
+
+    Output: output gets written into an specified output file as dumped dictionary object
+            one can easily load using the following code:
+    with open(CURRENT_FOLDER + COURSE_DETAIL_FILE, 'r') as courses_input_file:
+        course_detail_data = eval(courses_input_file.read())
+    '''
     ctr = 0
     course_dic = {}
 
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/courses.txt', 'r') as courses_input_file:
+    with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
         file_content = courses_input_file.read().splitlines()
         for line in file_content:
             line_arr = line.split('|')
@@ -64,30 +85,82 @@ def get_course_detail():
 
             course_dic[subject_name] = detail
 
-        courses_detailed_data = open(os.path.dirname(os.path.realpath(__file__)) + '/courses_detailed_data.txt', 'w')
+        courses_detailed_data = open(CURRENT_FOLDER + COURSE_DETAIL_FILE, 'w')
         courses_detailed_data.write(str(course_dic))
 
     print "Get info for " + str(ctr) + " courses."
 
 
-def parse_prerequisit():
+def translate_prerequisits():
+    global_section_ctr = []
+    school_year_ctr = []
+
+    course_dic = {}
+    with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
+        file_content = courses_input_file.read().splitlines()
+        for line in file_content:
+            line_arr = line.split('|')
+            subject_name = line_arr[0]
+            course_category_list = line_arr[1:]
+
+
+    def parse_prereq(prereq_string):
+        '''
+
+        :param prereq_string:
+        :return: None when it is unparsable and need human tagging
+                 Dictionary:
+                    course_pre:
+                    major_pre
+        '''
+        if '; or' in prereq_string:
+            return None
+
+        if re.search(r'\([^\)]*;.*\)', prereq_string): # eng special (;) semi-colon inside brackets
+            #TODO
+            return None
+        prereq_dic = {}
+        prereq_array = prereq_string.split(';')
+        for prereq_element in prereq_array:
+            global_section_ctr.append("")
+
+            if re.search(r'( |^|\()[1-4][aAbB]', prereq_element): # contains school year info
+                if re.search(r'((\(.+\)) or)+ \(.+\)', prereq_element): # () or... ()
+                    pass
+                elif re.search(r'\([^)]*and.*\)', prereq_element): # (and)
+                    pass
+                elif re.search(r'\(\(', prereq_element): # (()and())
+                    pass
+                elif re.search(r'[0-9]{3}', prereq_element):
+                    print prereq_element
+                    school_year_ctr.append("")
+
+
     prerequisit_description_list = []
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/courses_detailed_data.txt', 'r') as courses_input_file:
+    with open(CURRENT_FOLDER + COURSE_DETAIL_FILE, 'r') as courses_input_file:
         course_detail_data = eval(courses_input_file.read())
         for subject_name in course_detail_data.keys():
+            load_error_count = 0
             for course_item in course_detail_data[subject_name]:
                 try:
-                    prerequisit_description_list.append(course_item['prerequisites'])
+                    if course_item['prerequisites']:
+                        prerequisit_description_list.append(course_item['prerequisites'])
                 except:
-                    print subject_name
-                    break
+                    load_error_count += 1
+                    continue
+            if load_error_count:
+                print 'Failed to load ' + str(load_error_count) + ' course(s) for ' + subject_name
 
-    print(len(prerequisit_description_list))
-    print(prerequisit_description_list[2])
+    #with open(CURRENT_FOLDER + PREREQ_LIST_FILE, 'w') as prereq_output_file:
+    for prereq in prerequisit_description_list:
+        #prereq_output_file.write(prereq + '\n')
+        parse_prereq(prereq)
 
+    print len(global_section_ctr)
+    print len(school_year_ctr)
 
 
 if __name__ == '__main__':
     # update_courses_file()
     # get_course_detail()
-    parse_prerequisit()
+    translate_prerequisits()
