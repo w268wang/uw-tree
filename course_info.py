@@ -92,49 +92,6 @@ def get_course_detail():
 
 
 def translate_prerequisits():
-    global_section_ctr = []
-    school_year_ctr = []
-
-    course_dic = {}
-    with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
-        file_content = courses_input_file.read().splitlines()
-        for line in file_content:
-            line_arr = line.split('|')
-            subject_name = line_arr[0]
-            course_category_list = line_arr[1:]
-
-
-    def parse_prereq(prereq_string):
-        '''
-
-        :param prereq_string:
-        :return: None when it is unparsable and need human tagging
-                 Dictionary:
-                    course_pre:
-                    major_pre
-        '''
-        if '; or' in prereq_string:
-            return None
-
-        if re.search(r'\([^\)]*;.*\)', prereq_string): # eng special (;) semi-colon inside brackets
-            #TODO
-            return None
-        prereq_dic = {}
-        prereq_array = prereq_string.split(';')
-        for prereq_element in prereq_array:
-            global_section_ctr.append("")
-
-            if re.search(r'( |^|\()[1-4][aAbB]', prereq_element): # contains school year info
-                if re.search(r'((\(.+\)) or)+ \(.+\)', prereq_element): # () or... ()
-                    pass
-                elif re.search(r'\([^)]*and.*\)', prereq_element): # (and)
-                    pass
-                elif re.search(r'\(\(', prereq_element): # (()and())
-                    pass
-                elif re.search(r'[0-9]{3}', prereq_element):
-                    print prereq_element
-                    school_year_ctr.append("")
-
 
     prerequisit_description_list = []
     with open(CURRENT_FOLDER + COURSE_DETAIL_FILE, 'r') as courses_input_file:
