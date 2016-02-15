@@ -4,6 +4,7 @@ import re
 import os
 from enum import Enum
 
+
 #############################################################
 # IMPORTANT ASSUMPTION: course category never ends with 'Z' #
 #############################################################
@@ -17,6 +18,23 @@ SUBJECT_LIST_FILE = 'subject_list.txt'
 COURSE_CAT_FILE = 'courses.txt'
 COURSE_DETAIL_FILE = 'courses_detailed_data.txt'
 PREREQ_LIST_FILE = 'courses_prereq.txt'
+
+SLASH_CATEGORY = r'([0-9]{3}[A-Z]?/)+[0-9]{3}[A-Z]?' # 100R/234A
+SLASH_SUB_COMMA_CATEGORY = r'(([A-Z]{2,6}/)+)?[A-Z]{2,6} ([0-9]{3}[A-Z]?, )+[0-9]{3}[A-Z]?' # AAA/BBB 123, 342
+SLASH_COURSE = r'([A-Z]{2,6} [0-9]{3}[A-Z]?/)+[A-Z]{2,6} [0-9]{3}[A-Z]?' # XXX 100/XXX 324E
+OR_COURSE = r'([A-Z]{2,6} [0-9]{3}[A-Z]? (OR|or) )+[A-Z]{2,6} [0-9]{3}[A-Z]?' # XXX 100 OR XXX 324E
+COURSE_PATTERN = r'[A-Z]{2,6} [0-9]{3}[A-Z]?' # MATH 239A
+CATEGORY_PATTERN = r'[0-9]{3}[A-Z]?' # 245R
+SUBJECT_PATTERN = r'[A-Z]{2,6}' # MATH
+
+ENG_OR_BRACKETS = r'(\(.+?\) or )+\(.+\)' # (XXX XXX) or (XXX XXX) or (XXX)
+
+class ReplaceType(Enum):
+    slash_category = 1
+    slash_sub_comma_category = 2
+    one_of_slash_sub_comma_category = 3
+    slash_course = 4
+    or_course = 5
 
 global_section_ctr = []
 school_year_ctr = []
@@ -44,48 +62,11 @@ def parse_prereq(prereq_string):
         return None
 
     if re.search(r'\([^\)]*;.*\)', prereq_string): # eng special (;) semi-colon inside brackets
-        #TODO
-        return None
+        prereq_array = prereq_string.split('or')
     prereq_dic = {}
     prereq_array = prereq_string.split(';')
     for prereq_element in prereq_array:
-        global_section_ctr.append("")
-
-        if re.search(r'( |^|\()[1-4][aAbB]', prereq_element): # contains school year info
-            if re.search(r'((\(.+\)) or)+ \(.+\)', prereq_element): # () or... ()
-                pass
-            elif re.search(r'\([^)]*and.*\)', prereq_element): # (and)
-                pass
-            elif re.search(r'\(\(', prereq_element): # (()and())
-                pass
-            elif re.search(r'[0-9]{3}', prereq_element):
-                and_split = prereq_element.split('and')
-                for and_split_element in and_split:
-                    for or_split_element in and_split_element.split('or'):
-                        if re.search(r'( |^|\()[1-4][aAbB]', prereq_element) \
-                                and re.search(r'[0-9]{3}', prereq_element):
-                            return None
-                        elif re.search(r'( |^|\()[1-4][aAbB]', prereq_element):
-                            print prereq_element
-                        elif re.search(r'[0-9]{3}', prereq_element):
-                            pass
-                print prereq_element
-                school_year_ctr.append("")
-
-class ReplaceType(Enum):
-    slash_category = 1
-    slash_sub_comma_category = 2
-    one_of_slash_sub_comma_category = 3
-    slash_course = 4
-    or_course = 5
-
-SLASH_CATEGORY = r'([0-9]{3}[A-Z]?/)+[0-9]{3}[A-Z]?'
-SLASH_SUB_COMMA_CATEGORY = r'(([A-Z]{2,6}/)+)?[A-Z]{2,6} ([0-9]{3}[A-Z]?, )+[0-9]{3}[A-Z]?'
-SLASH_COURSE = r'([A-Z]{2,6} [0-9]{3}[A-Z]?/)+[A-Z]{2,6} [0-9]{3}[A-Z]?'
-OR_COURSE = r'([A-Z]{2,6} [0-9]{3}[A-Z]? (OR|or) )+[A-Z]{2,6} [0-9]{3}[A-Z]?'
-COURSE_PATTERN = r'[A-Z]{2,6} [0-9]{3}[A-Z]?'
-CATEGORY_PATTERN = r'[0-9]{3}[A-Z]?'
-SUBJECT_PATTERN = r'[A-Z]{2,6}'
+        parse_course(prereq_element)
 
 def parse_course(course_string):
 
@@ -113,7 +94,9 @@ def parse_course(course_string):
             else:
                 course_slash_splitted_string = ''
                 for category_string in course_parse_result:
-                    course_slash_splitted_string += '|' + parsed_subject_name + ' ' + category_string
+                    if len(course_slash_splitted_string) > 0:
+                        course_slash_splitted_string += '|'
+                    course_slash_splitted_string += parsed_subject_name + ' ' + category_string
 
                 result_course_list.append(course_slash_splitted_string)
 
@@ -207,14 +190,22 @@ def _course_dereplacer(subject_name, parsed_category, replace_array):
             replaced_category_string = re.search(CATEGORY_PATTERN, searched_course).group(0)
             if searched_course[-1:] == REPLACEMENT_CHAR:
                 dereplace_result = _course_dereplacer(subject_name, replaced_category_string, replace_array)
+
                 if isinstance(dereplace_result, basestring):
-                    result_string += '|' + dereplace_result
+                    if len(result_string) > 0:
+                        result_string += '|'
+
+                    result_string += dereplace_result
                 else:
                     subject_string = re.search(SUBJECT_PATTERN, searched_course).group(0)
                     for category_string in dereplace_result:
-                        result_string += '|' + subject_string + ' ' + category_string
+                        if len(result_string) > 0:
+                            result_string += '|'
+                        result_string += subject_string + ' ' + category_string
             else:
-                result_string += '|' + searched_course
+                if len(result_string) > 0:
+                    result_string += '|'
+                result_string += searched_course
         return result_string
 
     elif replace_type == ReplaceType.slash_sub_comma_category or \
@@ -235,10 +226,12 @@ def _course_dereplacer(subject_name, parsed_category, replace_array):
                 searched_category_list.append(searched_category_string)
 
         for category_string in searched_category_list:
-            result_string += '|' + subject_string + ' ' + category_string
+            if len(result_string) > 0:
+                result_string += '|'
+            result_string += subject_string + ' ' + category_string
 
         if replace_type == ReplaceType.one_of_slash_sub_comma_category:
-            result_string = str(len(searched_category_list)) + result_string
+            result_string = str(len(searched_category_list)) + '|' + result_string
 
         return result_string
 
@@ -251,6 +244,6 @@ def _course_dereplacer(subject_name, parsed_category, replace_array):
 
 
 if __name__ == '__main__':
-    # print parse_course('One of ECE 316, 318, Level at least 4A Computer Engineering or Electrical Engineering')
+    print parse_course('One of ECE 316, 318, Level at least 4A Computer Engineering or Electrical Engineering')
     print parse_course('AAA 100, 200R, 300 or BBB 100/CCC 200, AMATH 242/341/CM 271/CS 371, DDD 111/222, EEE 111/222, RRR 100S')
     # print re.search(CATEGORY_PATTERN, 'REP 103Z').group(0)
