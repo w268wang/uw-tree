@@ -29,6 +29,8 @@ SUBJECT_PATTERN = r'[A-Z]{2,6}' # MATH
 
 ENG_OR_BRACKETS = r'(\(.+?\) or )+\(.+\)' # (XXX XXX) or (XXX XXX) or (XXX)
 
+YEAR_PATTERN = r'[1-4](A|B)'
+
 class ReplaceType(Enum):
     slash_category = 1
     slash_sub_comma_category = 2
@@ -73,9 +75,24 @@ def parse_prereq(prereq_string):
         return result_array
 
     prereq_dic = {}
+    prereq_course = []
+    prereq_year = []
     prereq_array = prereq_string.split(';')
     for prereq_element in prereq_array:
-        parse_course(prereq_element)
+        if re.search(COURSE_PATTERN, prereq_element):
+            prereq_course.append(parse_course(prereq_element))
+        prereq_year.append(parse_year(prereq_element))
+
+    prereq_dic['course'] = prereq_course
+    prereq_dic['year'] = prereq_year
+
+    return prereq_dic
+
+
+def parse_year(input_year_string):
+
+    input_year_string = re.sub(r'[0-9]{4}', '', input_year_string)
+    return re.search(YEAR_PATTERN, input_year_string).group(0)
 
 def parse_course(input_course_string):
 
