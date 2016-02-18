@@ -4,6 +4,11 @@ import mongoengine as mongo
 
 class Student(mongo.Document):
 
+    meta = {
+        'db_alias': 'user-db',
+        'collection': 'students'
+    }
+
     # The year this student is in.
     current_year = mongo.StringField(required = True)
 

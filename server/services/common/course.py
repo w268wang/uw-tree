@@ -1,8 +1,19 @@
 __author__ = 'wwang'
 
+if __name__ == '__main__' and __package__ is None:
+    from os import sys, path
+    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+
 import mongoengine as mongo
+from server.services.data.parse_prereq_util import parse_prereq
 
 class Course(mongo.Document):
+
+    meta = {
+        'db_alias': 'uw-tree',
+        'collection': 'courses',
+        'indexes': ['name']
+    }
 
     ###################
     # Data calculated #
@@ -10,13 +21,13 @@ class Course(mongo.Document):
 
     # The full course code for this course
     # subject + ' ' + category e.g. CS 246
-    name = mongo.StringField(primary_key = True, required = True)
+    name = mongo.StringField(required = True)
 
     # Computer readable prerequisites info evaluated by parser
-    evaluated_prereq = mongo.ListField(required = True)
+    evaluated_prereq = mongo.DictField(required = True)
 
     # Computer readable prerequisites info evaluated by a teapot
-    teapot_prereq = mongo.ListField(required = False)
+    teapot_prereq = mongo.DictField(required = False)
 
 
     ##################################
@@ -30,7 +41,7 @@ class Course(mongo.Document):
     subject = mongo.StringField(required = True)
 
     # The category of the course. e.g. 246
-    category = mongo.StringField(required = True)
+    catalog_number = mongo.StringField(required = True)
 
     # The title of the course. e.g. Object-Oriented Software Development
     title = mongo.StringField(required = True)
@@ -39,7 +50,7 @@ class Course(mongo.Document):
     units = mongo.DecimalField(required = True)
 
     # The course description. e.g. Introduction to object-oriented...
-    description = mongo.StringField(required = False)
+    description = ""
 
     # The activities may be involved in this course. e.g. ["LAB", "LEC", "TST", "TUT"]
     instructions = mongo.ListField(required = False)
@@ -86,4 +97,15 @@ class Course(mongo.Document):
     # TODO fields
     # keywords: words extract from the course
     #
+
+    def __init__(self, course_dic):
+        super(mongo.Document, self).__init__()
+        for key in course_dic:
+            self[key] = course_dic[key]
+        self.name = self.subject + ' ' + self.catalog_number
+        try:
+            self.evaluated_prereq = parse_prereq(self.prerequisites)
+        except:
+            self.evaluated_prereq = {}
+        self.teapot_prereq = {}
 

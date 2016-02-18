@@ -55,7 +55,7 @@ with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
         course_category_list = line_arr[1:]
         course_dic[subject_name] = course_category_list
 
-def parse_prereq(prereq_string):
+def parse_prereq(prereq_string, verbose = False):
     '''
 
     :param prereq_string:
@@ -94,7 +94,7 @@ def parse_year(input_year_string):
     input_year_string = re.sub(r'[0-9]{4}', '', input_year_string)
     return re.search(YEAR_PATTERN, input_year_string).group(0)
 
-def parse_course(input_course_string):
+def parse_course(input_course_string, verbose = False):
 
     input_course_string = re.sub(r'[0-9]{4}', '', input_course_string)
 
@@ -136,7 +136,7 @@ def parse_course(input_course_string):
 
     return result_course_list
 
-def _course_replacer(course_string, replace_array):
+def _course_replacer(course_string, replace_array, verbose = False):
 
     replace_num = REPLACEMENT_INIT_NUM
 
@@ -148,7 +148,7 @@ def _course_replacer(course_string, replace_array):
         replace_array.append((replace_category_string, category_part, ReplaceType.slash_category))
         replace_num += 1
 
-    print course_string
+    if verbose: print course_string
     # Replace / divided subject and , divided category. e.g. SOC/LS 280, 321 to REP 101Z
     while re.search(SLASH_SUB_COMMA_CATEGORY, course_string):
         replace_type = ReplaceType.slash_sub_comma_category
@@ -167,7 +167,7 @@ def _course_replacer(course_string, replace_array):
         replace_array.append((replace_course_string, course_part, replace_type))
         replace_num += 1
 
-    print course_string
+    if verbose: print course_string
     # Replace / divided course. e.g. SOC 123/LS 280 to REP 101Z
     while re.search(SLASH_COURSE, course_string):
         replace_course_string = 'REP ' + str(replace_num) + REPLACEMENT_CHAR
@@ -176,7 +176,7 @@ def _course_replacer(course_string, replace_array):
         replace_array.append((replace_course_string, course_part, ReplaceType.slash_course))
         replace_num += 1
 
-    print course_string
+    if verbose: print course_string
     # Replace OR divided course. e.g. SOC 123 OR LS 280 to REP 101Z
     while re.search(OR_COURSE, course_string):
         replace_course_string = 'REP ' + str(replace_num) + REPLACEMENT_CHAR
@@ -188,7 +188,7 @@ def _course_replacer(course_string, replace_array):
     return course_string
 
 # replace_array: Constant parameter
-def _course_dereplacer(subject_name, parsed_category, replace_array):
+def _course_dereplacer(subject_name, parsed_category, replace_array, verbose = False):
 
     def _unwire_slash_category(replaced_string):
         searched_category_list = []
@@ -199,7 +199,7 @@ def _course_dereplacer(subject_name, parsed_category, replace_array):
             searched_category_list.append(searched_category_string)
         return searched_category_list
 
-    print 'get ' + subject_name + ' with ' + parsed_category
+    if verbose: print 'get ' + subject_name + ' with ' + parsed_category
     replaced_course_tuple = replace_array[int(parsed_category[:-1]) - REPLACEMENT_INIT_NUM]
     replace_course_string = replaced_course_tuple[1]
     replace_type = replaced_course_tuple[2]
