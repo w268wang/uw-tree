@@ -1,11 +1,7 @@
 __author__ = 'wwang'
 
-if __name__ == '__main__' and __package__ is None:
-    from os import sys, path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
 import mongoengine as mongo
-from server.services.data.parse_prereq_util import parse_prereq
+from ..data.parse_prereq_util import parse_prereq
 
 class Course(mongo.Document):
 
@@ -106,4 +102,5 @@ class Course(mongo.Document):
         except:
             self.evaluated_prereq = {}
         self.teapot_prereq = {}
+
 

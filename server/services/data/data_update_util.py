@@ -2,7 +2,7 @@ __author__ = 'wwang'
 
 if __name__ == '__main__' and __package__ is None:
     from os import sys, path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+    sys.path.append(path.abspath(__file__))
 
 from server.services.database import mongo
 from server.services.common.course import Course
@@ -26,7 +26,7 @@ def upload_courses():
                 except:
                     load_error_count += 1
                     continue
-                    
+
             if load_error_count:
                 print 'Failed to load ' + str(load_error_count) + ' course(s) for ' + subject_name
     mongo.insert_list(course_object_list, Course)

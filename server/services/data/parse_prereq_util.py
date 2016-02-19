@@ -9,6 +9,8 @@ from enum import Enum
 # IMPORTANT ASSUMPTION: course category never ends with 'Z' #
 #############################################################
 
+STOP_WORDS = [' a grade of.*?or higher in', ' with a grade of.*?%']
+
 VALID_DEP = ['AHS', 'ART', 'ENG', 'ENV', 'MAT', 'SCI', 'REN', 'VPA', 'WLU']
 CURRENT_FOLDER = os.path.dirname(os.path.realpath(__file__)) + '/'
 REPLACEMENT_CHAR = 'Z'
@@ -44,7 +46,7 @@ class ParseResultIndicator(Enum):
 
 global_section_ctr = []
 school_year_ctr = []
-
+verbose = True
 
 course_dic = {}
 with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
@@ -55,7 +57,8 @@ with open(CURRENT_FOLDER + COURSE_CAT_FILE, 'r') as courses_input_file:
         course_category_list = line_arr[1:]
         course_dic[subject_name] = course_category_list
 
-def parse_prereq(prereq_string, verbose = False):
+
+def parse_prereq(prereq_string):
     '''
 
     :param prereq_string:
@@ -64,6 +67,9 @@ def parse_prereq(prereq_string, verbose = False):
                 course_pre:
                 major_pre
     '''
+    prereq_string = re.sub(r' taken.*or earlier', '', prereq_string)
+    prereq_string = re.sub(r'[0-9]{4}', '', prereq_string)
+    print 'a  ' + prereq_string
     if '; or' in prereq_string:
         return None
 
@@ -79,9 +85,12 @@ def parse_prereq(prereq_string, verbose = False):
     prereq_year = []
     prereq_array = prereq_string.split(';')
     for prereq_element in prereq_array:
+        print prereq_element
         if re.search(COURSE_PATTERN, prereq_element):
             prereq_course.append(parse_course(prereq_element))
-        prereq_year.append(parse_year(prereq_element))
+        parse_year_result = parse_year(prereq_element)
+        if parse_year_result:
+            prereq_year.append(parse_year_result)
 
     prereq_dic['course'] = prereq_course
     prereq_dic['year'] = prereq_year
@@ -91,10 +100,12 @@ def parse_prereq(prereq_string, verbose = False):
 
 def parse_year(input_year_string):
 
-    input_year_string = re.sub(r'[0-9]{4}', '', input_year_string)
-    return re.search(YEAR_PATTERN, input_year_string).group(0)
+    search_result = re.search(YEAR_PATTERN, input_year_string)
+    if search_result:
+        return search_result.group(0)
 
-def parse_course(input_course_string, verbose = False):
+
+def parse_course(input_course_string):
 
     input_course_string = re.sub(r'[0-9]{4}', '', input_course_string)
 
@@ -136,7 +147,7 @@ def parse_course(input_course_string, verbose = False):
 
     return result_course_list
 
-def _course_replacer(course_string, replace_array, verbose = False):
+def _course_replacer(course_string, replace_array):
 
     replace_num = REPLACEMENT_INIT_NUM
 
@@ -185,10 +196,11 @@ def _course_replacer(course_string, replace_array, verbose = False):
         replace_array.append((replace_course_string, course_part, ReplaceType.or_course))
         replace_num += 1
 
+    if verbose: print course_string
     return course_string
 
 # replace_array: Constant parameter
-def _course_dereplacer(subject_name, parsed_category, replace_array, verbose = False):
+def _course_dereplacer(subject_name, parsed_category, replace_array):
 
     def _unwire_slash_category(replaced_string):
         searched_category_list = []
@@ -208,6 +220,7 @@ def _course_dereplacer(subject_name, parsed_category, replace_array, verbose = F
 
         result_string = ''
         searched_course_list = []
+        course_list = []
 
         while re.search(COURSE_PATTERN, replace_course_string):
             searched_course_string = re.search(COURSE_PATTERN, replace_course_string).group(0)
@@ -220,22 +233,37 @@ def _course_dereplacer(subject_name, parsed_category, replace_array, verbose = F
                 dereplace_result = _course_dereplacer(subject_name, replaced_category_string, replace_array)
 
                 if isinstance(dereplace_result, basestring):
-                    if len(result_string) > 0:
-                        result_string += '|'
+                    if len(course_list) > 0:
+                        course_list[-1] += '|' + dereplace_result
+                    else:
+                        if len(result_string) > 0:
+                            result_string += '|'
+                        result_string += dereplace_result
 
-                    result_string += dereplace_result
                 elif re.search(COURSE_PATTERN, dereplace_result[0]):
-                    pass # considered not possible
+
+                    if len(result_string) > 0:
+                        dereplace_result[0] = result_string + '|' + dereplace_result[0]
+                        result_string = ''
+                    course_list.extend(dereplace_result)
                 else:
                     subject_string = re.search(SUBJECT_PATTERN, searched_course).group(0)
                     for category_string in dereplace_result:
                         if len(result_string) > 0:
                             result_string += '|'
                         result_string += subject_string + ' ' + category_string
+                    if len(result_string) > 0:
+                        dereplace_result[0] = result_string + '|' + dereplace_result[0]
+                        result_string = ''
             else:
-                if len(result_string) > 0:
-                    result_string += '|'
-                result_string += searched_course
+                if len(course_list) > 0:
+                    course_list[-1] += '|' + searched_course
+                else:
+                    if len(result_string) > 0:
+                        result_string += '|'
+                    result_string += searched_course
+        if len(course_list) > 0:
+            return course_list
         return result_string
 
     elif replace_type == ReplaceType.slash_sub_comma_category or \
@@ -282,4 +310,9 @@ if __name__ == '__main__':
     # print parse_course('AAA 100, 200R, 300 or BBB 100/CCC 200, AMATH 242/341/CM 271/CS 371, DDD 111/222, EEE 111/222, RRR 100S')
     # print parse_course('CIVE 153 or (EARTH 121, 121L) or (level at least 3A Civil or Environmental or Geological Engineering) or (level at least 3A Earth Science/Hydrogeology Specialization)')
     # print re.search(CATEGORY_PATTERN, 'REP 103Z').group(0)
-    print parse_course('CS 240, 241, 246, (CS 251 or ECE 222)')
+    # print parse_prereq('CS 240, 241, 246, (CS 251 or ECE 222)')
+    # print parse_prereq('(CS 136, 145 taken in fall 2010 or earlier or CS 146), MATH 135; Honours Mathematics students only.')
+    #print parse_prereq('CS 145 taken fall 2010 or earlier or CS 146 or a grade of 60% or higher in CS 136 or 138; Honours Mathematics or Software Engineering students only.')
+    if re.search(r' with a grade of.*?%', 'STAT 220 with a grade of at least 70% or'):
+        print 1
+

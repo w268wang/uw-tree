@@ -1,13 +1,10 @@
 __author__ = 'wwang'
 
-if __name__ == '__main__' and __package__ is None:
-    from os import sys, path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
 from mongoengine import connect
 from mongoengine import *
 from server.services.common.student import Student
 from server.services.common.course import Course
+from bson import json_util
 
 connection = connect(db = 'uw-tree', alias = 'uw-tree')
 
@@ -22,9 +19,16 @@ def insert_list(course_object_list, class_type):
     print course_object_list[0]['evaluated_prereq']
     class_type.objects.insert(course_object_list)
 
-def get_course_by_name():
-    print Course.objects.get(name = "CS 246")
+def get_course_by_subject_and_catalog(subject, catalog):
+    result = Course.objects.get(name = subject + ' ' + catalog)
+    return result.to_json()
+
+def update_course_by_field(match_query, update_content):
+    result = Course.objects.modify(query = match_query, update = update_content)
+    return result.to_json()
+
 
 if __name__ == '__main__':
-    get_course_by_name()
+    # print get_course_by_subject_and_catalog("CS", "246")
+    print update_course_by_field({'name': 'CS 246'}, {'teapot_prereq': {'a': 1}})
 
