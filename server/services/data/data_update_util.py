@@ -20,10 +20,13 @@ def upload_courses():
             load_error_count = 0
             for course_item in course_detail_data[subject_name]:
                 try:
-                    course_object_list.append(Course(course_item))
+                    course = Course()
+                    course.setup(course_item)
+                    course_object_list.append(course)
                 except:
                     load_error_count += 1
                     continue
+                    
             if load_error_count:
                 print 'Failed to load ' + str(load_error_count) + ' course(s) for ' + subject_name
     mongo.insert_list(course_object_list, Course)

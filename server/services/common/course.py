@@ -11,8 +11,7 @@ class Course(mongo.Document):
 
     meta = {
         'db_alias': 'uw-tree',
-        'collection': 'courses',
-        'indexes': ['name']
+        'collection': 'courses'
     }
 
     ###################
@@ -50,7 +49,7 @@ class Course(mongo.Document):
     units = mongo.DecimalField(required = True)
 
     # The course description. e.g. Introduction to object-oriented...
-    description = ""
+    description = mongo.StringField(required = False)
 
     # The activities may be involved in this course. e.g. ["LAB", "LEC", "TST", "TUT"]
     instructions = mongo.ListField(required = False)
@@ -98,8 +97,7 @@ class Course(mongo.Document):
     # keywords: words extract from the course
     #
 
-    def __init__(self, course_dic):
-        super(mongo.Document, self).__init__()
+    def setup(self, course_dic):
         for key in course_dic:
             self[key] = course_dic[key]
         self.name = self.subject + ' ' + self.catalog_number

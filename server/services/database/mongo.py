@@ -19,6 +19,7 @@ class Page(Document):
     title = StringField(required = False)
 
 def insert_list(course_object_list, class_type):
+    print course_object_list[0]['evaluated_prereq']
     class_type.objects.insert(course_object_list)
 
 def get_course_by_name():
