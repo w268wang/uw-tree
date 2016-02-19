@@ -7,3 +7,6 @@
 
 # exclude pycharm setting file
 .idea/
+
+# python compile file
+*.pyc
