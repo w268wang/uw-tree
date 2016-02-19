@@ -9,7 +9,8 @@ from enum import Enum
 # IMPORTANT ASSUMPTION: course category never ends with 'Z' #
 #############################################################
 
-STOP_WORDS = [' a grade of.*?or higher in', ' with a grade of.*?%']
+STOP_PATTERN = [r' a grade of.*?or higher in', r' with a grade of.*?%',
+              r' taken.*?or earlier', r'[0-9]{4}']
 
 VALID_DEP = ['AHS', 'ART', 'ENG', 'ENV', 'MAT', 'SCI', 'REN', 'VPA', 'WLU']
 CURRENT_FOLDER = os.path.dirname(os.path.realpath(__file__)) + '/'
@@ -67,8 +68,9 @@ def parse_prereq(prereq_string):
                 course_pre:
                 major_pre
     '''
-    prereq_string = re.sub(r' taken.*or earlier', '', prereq_string)
-    prereq_string = re.sub(r'[0-9]{4}', '', prereq_string)
+    for pattern in STOP_PATTERN:
+        prereq_string = re.sub(pattern, '', prereq_string)
+
     print 'a  ' + prereq_string
     if '; or' in prereq_string:
         return None
@@ -312,7 +314,4 @@ if __name__ == '__main__':
     # print re.search(CATEGORY_PATTERN, 'REP 103Z').group(0)
     # print parse_prereq('CS 240, 241, 246, (CS 251 or ECE 222)')
     # print parse_prereq('(CS 136, 145 taken in fall 2010 or earlier or CS 146), MATH 135; Honours Mathematics students only.')
-    #print parse_prereq('CS 145 taken fall 2010 or earlier or CS 146 or a grade of 60% or higher in CS 136 or 138; Honours Mathematics or Software Engineering students only.')
-    if re.search(r' with a grade of.*?%', 'STAT 220 with a grade of at least 70% or'):
-        print 1
-
+    print parse_prereq('CS 145 taken fall 2010 or earlier or CS 146 or a grade of 60% or higher in CS 136 or 138; Honours Mathematics or Software Engineering students only.')
