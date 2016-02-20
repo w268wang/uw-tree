@@ -1,20 +1,23 @@
 __author__ = 'wwang'
 
 import mongoengine as mongo
-from ..util.security import md5_hash
+from twitter_account import TwitterAccount
 
 class Student(mongo.Document):
 
     meta = {
-        'db_alias': 'user-db',
+        'db_alias': 'uw-tree',
         'collection': 'students'
     }
 
-    # The student's uwaterloo email
-    email = mongo.StringField(required = True)
+    # The twitter user id associated with this student account
+    twitter_id = mongo.LongField(required = True)
 
-    # The student's password
-    password_hash = mongo.StringField(required = True)
+    # The other twitter account infomation
+    twitter_account = mongo.EmbeddedDocumentField(TwitterAccount, required = True)
+
+    # Email
+    email = mongo.StringField(required = True)
 
     # The year this student is in.
     current_year = mongo.StringField(required = True)
@@ -23,7 +26,7 @@ class Student(mongo.Document):
     current_plan = mongo.ListField(required = True)
 
     # The current major.
-    current_major = mongo.StringField(required = True)
+    current_major = mongo.ListField(required = True)
 
     # The courses this student took before.
     # course - mark - year took - want to retake
@@ -32,12 +35,12 @@ class Student(mongo.Document):
     # The courses this student is interested in.
     interested_courses = mongo.ListField(required = True)
 
-    def init(self, email, password):
-        self.email = email
-        self.password_hash = md5_hash(password)
+    def init(self, twitter_id):
+        self.twitter_id = twitter_id
 
+        twitter_account = TwitterAccount()
         current_year = '1A'
         current_plan = []
-        current_major = ''
+        current_major = []
         courses_taken = []
         interested_courses = []

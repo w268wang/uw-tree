@@ -27,6 +27,10 @@ def update_course_by_field(match_query, update_content):
     result = Course.objects.modify(query = match_query, update = update_content)
     return result.to_json()
 
+def add_student(twitter_id):
+    student = Student(twitter_id)
+    Student.objects.insert(student)
+
 
 if __name__ == '__main__':
     # print get_course_by_subject_and_catalog("CS", "246")
