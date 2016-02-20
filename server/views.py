@@ -19,3 +19,8 @@ def build_response(json_obj, code = 200):
 def get_course(subject, catalog):
     result = mongo.get_course_by_subject_and_catalog(subject, catalog)
     return build_response(result)
+
+@app.route('/add/student/<subject>/<catalog>', methods=['POST'])
+def add_student():
+    name=request.form['yourname']
+    email=request.form['youremail']

@@ -1,6 +1,7 @@
 __author__ = 'wwang'
 
 import mongoengine as mongo
+from ..util.security import md5_hash
 
 class Student(mongo.Document):
 
@@ -8,6 +9,12 @@ class Student(mongo.Document):
         'db_alias': 'user-db',
         'collection': 'students'
     }
+
+    # The student's uwaterloo email
+    email = mongo.StringField(required = True)
+
+    # The student's password
+    password_hash = mongo.StringField(required = True)
 
     # The year this student is in.
     current_year = mongo.StringField(required = True)
@@ -24,3 +31,13 @@ class Student(mongo.Document):
 
     # The courses this student is interested in.
     interested_courses = mongo.ListField(required = True)
+
+    def init(self, email, password):
+        self.email = email
+        self.password_hash = md5_hash(password)
+
+        current_year = '1A'
+        current_plan = []
+        current_major = ''
+        courses_taken = []
+        interested_courses = []
