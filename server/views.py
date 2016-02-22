@@ -2,8 +2,8 @@ __author__ = 'wwang'
 
 from server import app
 from flask import Response, request
-import flask
 from services.database import mongo
+from services.util.twitter_login import twitter_oauth, twitter_callback_handle
 import json
 
 @app.route('/')
@@ -32,3 +32,15 @@ def add_student(twitter_id):
 def update_student():
     name = request.form['name']
     email = request.form['email']
+
+@app.route("/twitterreqoauth", methods=['GET'])
+def get_twitter_req_oauth():
+    oauth_token, oauth_token_secret = twitter_oauth()
+    return json.dumps({"token": oauth_token, "secret": oauth_token_secret})
+
+@app.route("/twitter_callback", methods=['GET'])
+def get_twitter_credentials():
+    oauth_token = request.args.get('oauth_token')
+    oauth_verifier = request.args.get('oauth_verifier')
+    oauth_denied = request.args.get('denied')
+    return twitter_callback_handle(oauth_token, oauth_verifier, oauth_denied)

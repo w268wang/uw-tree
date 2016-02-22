@@ -35,12 +35,17 @@ class Student(mongo.Document):
     # The courses this student is interested in.
     interested_courses = mongo.ListField(required = True)
 
-    def init(self, twitter_id):
+    def init(self, twitter_id, user_oauth_token, user_oauth_token_secret):
         self.twitter_id = twitter_id
 
         twitter_account = TwitterAccount()
+        twitter_account.init(user_oauth_token, user_oauth_token_secret)
+
         current_year = '1A'
         current_plan = []
         current_major = []
         courses_taken = []
         interested_courses = []
+
+    def update_twitter_info(self, **kwargs):
+        self.twitter_account.update(**kwargs)

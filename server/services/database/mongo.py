@@ -27,9 +27,17 @@ def update_course_by_field(match_query, update_content):
     result = Course.objects.modify(query = match_query, update = update_content)
     return result.to_json()
 
-def add_student(twitter_id):
-    student = Student(twitter_id)
+def check_student_existence(twitter_id_input):
+    student = Student.objects.get(twitter_id = twitter_id_input)
+    return student == None
+
+def add_student(twitter_id, user_oauth_token, user_oauth_token_secret):
+    student = Student()
+    student.init(twitter_id, user_oauth_token, user_oauth_token_secret)
     Student.objects.insert(student)
+
+def update_student_twitter_info(twitter_id_input, user_oauth_token, user_oauth_token_secret):
+    Student.objects.get(twitter_id = twitter_id_input)
 
 
 if __name__ == '__main__':
