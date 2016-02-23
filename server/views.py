@@ -35,8 +35,8 @@ def update_student():
 
 @app.route("/twitterreqoauth", methods=['GET'])
 def get_twitter_req_oauth():
-    oauth_token, oauth_token_secret = twitter_oauth()
-    return json.dumps({"token": oauth_token, "secret": oauth_token_secret})
+    oauth_token = twitter_oauth()
+    return json.dumps({"token": oauth_token})
 
 @app.route("/twitter_callback", methods=['GET'])
 def get_twitter_credentials():

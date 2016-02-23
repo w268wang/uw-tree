@@ -7,7 +7,7 @@ class TwitterAccount(mongo.EmbeddedDocument):
     user_oauth_token = mongo.StringField(required = True)
     user_oauth_token_secret = mongo.StringField(required = True)
 
-    def init(oauth_token, oauth_token_secret):
+    def init(self, oauth_token, oauth_token_secret):
         user_oauth_token = oauth_token
         user_oauth_token_secret = oauth_token_secret
 

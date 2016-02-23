@@ -28,8 +28,11 @@ def update_course_by_field(match_query, update_content):
     return result.to_json()
 
 def check_student_existence(twitter_id_input):
-    student = Student.objects.get(twitter_id = twitter_id_input)
-    return student == None
+    try:
+        student = Student.objects.get(twitter_id = twitter_id_input)
+    except Student.DoesNotExist:
+        return False
+    return student != None
 
 def add_student(twitter_id, user_oauth_token, user_oauth_token_secret):
     student = Student()

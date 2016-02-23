@@ -31,9 +31,11 @@ def twitter_oauth():
     request_token = dict(urlparse.parse_qsl(content))
     oauth_token = request_token['oauth_token']
     oauth_token_secret = request_token['oauth_token_secret']
-    return oauth_token, oauth_token_secret
+    oauth_info[oauth_token] = oauth_token_secret
+    return oauth_token
 
 def twitter_callback_handle(oauth_token, oauth_verifier, oauth_denied):
+    print oauth_info
     app_callback_url = BASE_URL
     twitter_config = app.config['TWITTER']
 
@@ -57,7 +59,7 @@ def twitter_callback_handle(oauth_token, oauth_verifier, oauth_denied):
     user_oauth_token = access_token['oauth_token']
     user_oauth_token_secret = access_token['oauth_token_secret']
 
-    user_exists = mongo.check_student_existence(user_id, "twitter")
+    user_exists = mongo.check_student_existence(user_id)
 
     if not user_exists:
         mongo.add_student(user_id, user_oauth_token, user_oauth_token_secret)
