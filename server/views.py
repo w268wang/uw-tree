@@ -33,6 +33,7 @@ def update_student():
     name = request.form['name']
     email = request.form['email']
 
+# redirect to https://twitter.com/oauth/authorize?oauth_token=
 @app.route("/twitterreqoauth", methods=['GET'])
 def get_twitter_req_oauth():
     oauth_token = twitter_oauth()

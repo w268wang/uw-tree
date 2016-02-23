@@ -38,14 +38,20 @@ class Student(mongo.Document):
     def init(self, twitter_id, user_oauth_token, user_oauth_token_secret):
         self.twitter_id = twitter_id
 
-        twitter_account = TwitterAccount()
-        twitter_account.init(user_oauth_token, user_oauth_token_secret)
+        self.twitter_account = TwitterAccount()
+        self.twitter_account.init(user_oauth_token, user_oauth_token_secret)
 
-        current_year = '1A'
-        current_plan = []
-        current_major = []
-        courses_taken = []
-        interested_courses = []
+        self.current_year = '1A'
+        self.current_plan = []
+        self.current_major = []
+        self.courses_taken = []
+        self.interested_courses = []
 
     def update_twitter_info(self, **kwargs):
         self.twitter_account.update(**kwargs)
+
+if __name__ == '__main__':
+    student = Student()
+    student.init('a', 'b', 'c')
+    print student.twitter_account.user_oauth_token
+
