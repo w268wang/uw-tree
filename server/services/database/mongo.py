@@ -4,6 +4,7 @@ from mongoengine import connect
 from mongoengine import *
 from server.services.common.student import Student
 from server.services.common.course import Course
+from server.services.common.twitter_account import TwitterAccount
 from bson import json_util
 
 connection = connect(db = 'uw-tree', alias = 'uw-tree')
@@ -39,11 +40,23 @@ def add_student(twitter_id, user_oauth_token, user_oauth_token_secret):
     student.init(twitter_id, user_oauth_token, user_oauth_token_secret)
     Student.objects.insert(student)
 
-def update_student_twitter_info(twitter_id_input, user_oauth_token, user_oauth_token_secret):
-    Student.objects.get(twitter_id = twitter_id_input)
+def update_student_twitter_info(twitter_id, user_oauth_token = '', user_oauth_token_secret = ''):
+    if len(user_oauth_token):
+        Student.objects(twitter_id = twitter_id)\
+            .update_one(set__twitter_account__user_oauth_token = user_oauth_token,
+                        set__twitter_account__user_oauth_token_secret = user_oauth_token_secret)
+
+    # if len(user_oauth_token_secret):
+    #     Student.objects(twitter_id = twitter_id)\
+    #         .update_one(set__twitter_account__user_oauth_token_secret = user_oauth_token_secret)
+
+def update_student_info(twitter_id, **modify):
+    Student.objects(twitter_id = twitter_id).update_one(**modify)
 
 
 if __name__ == '__main__':
     # print get_course_by_subject_and_catalog("CS", "246")
-    print update_course_by_field({'name': 'CS 246'}, {'teapot_prereq': {'a': 1}})
+    # print update_course_by_field({'name': 'CS 246'}, {'teapot_prereq': {'a': 1}})
+    # update_student_twitter_info('2772277171', 'a2', 'b3')
+    update_student_info(twitter_id='2772277171', current_year = 'a2', courses_taken = ['b3', 'c'])
 
