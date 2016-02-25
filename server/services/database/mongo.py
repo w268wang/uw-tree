@@ -43,12 +43,11 @@ def add_student(twitter_id, user_oauth_token, user_oauth_token_secret):
 def update_student_twitter_info(twitter_id, user_oauth_token = '', user_oauth_token_secret = ''):
     if len(user_oauth_token):
         Student.objects(twitter_id = twitter_id)\
-            .update_one(set__twitter_account__user_oauth_token = user_oauth_token,
-                        set__twitter_account__user_oauth_token_secret = user_oauth_token_secret)
+            .update_one(set__twitter_account__user_oauth_token = user_oauth_token)
 
-    # if len(user_oauth_token_secret):
-    #     Student.objects(twitter_id = twitter_id)\
-    #         .update_one(set__twitter_account__user_oauth_token_secret = user_oauth_token_secret)
+    if len(user_oauth_token_secret):
+        Student.objects(twitter_id = twitter_id)\
+            .update_one(set__twitter_account__user_oauth_token_secret = user_oauth_token_secret)
 
 def update_student_info(twitter_id, **modify):
     Student.objects(twitter_id = twitter_id).update_one(**modify)
