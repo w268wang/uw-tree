@@ -57,5 +57,7 @@ if __name__ == '__main__':
     # print get_course_by_subject_and_catalog("CS", "246")
     # print update_course_by_field({'name': 'CS 246'}, {'teapot_prereq': {'a': 1}})
     # update_student_twitter_info('2772277171', 'a2', 'b3')
-    update_student_info(twitter_id='2772277171', current_year = 'a2', courses_taken = ['b3', 'c'])
+    #update_student_info(twitter_id='2772277171', current_year = 'a2', courses_taken = ['b3', 'c'])
+    update_student_info(twitter_id='2772277171', current_year = '3A', courses_taken = ['b3', 'c'],
+                        interested_courses = ['CS 452', 'CS 488s'])
 
