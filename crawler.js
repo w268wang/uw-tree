@@ -17,9 +17,26 @@ request(pageToVisit, function(error, response, body) {
      $('td:has(a)').each(function(index) {
      	var courseName = $(this).text().trim();
     	var link = $(this).attr('href');
-    	fs.appendFileSync('ECECourseRequirement.txt', courseName + '\n' + link + '\n');
+    	fs.appendFileSync('ECE.txt', courseName + ' ' + link + '\n');
      });
    }
 });
 
 var bioEngPage = "https://ugradcalendar.uwaterloo.ca/page/ENG-Biomedical-Engineering";
+console.log("Visting page" + bioEngPage);
+request(bioEngPage, function(error, response, body) {
+	if(error) {
+     console.log("Error: " + error);
+   	}
+   	// Check status code (200 is HTTP OK)
+   	console.log("Status code: " + response.statusCode);
+   	if(response.statusCode === 200) {
+	    // Parse the document body
+	    var $ = cheerio.load(body);
+	    $('tr').each(function(index) {
+	     	var courseName = $(this).text().trim();
+	    	var link = $(this).attr('href');
+	    	fs.appendFileSync('BioEng.txt', courseName + ' ' + link + '\n');
+	    });
+   	}
+});
