@@ -1,0 +1,12 @@
+
+# exclude .DS_Store files at any level
+*DS_Store
+
+# generally exclude all kinds of txt files
+*.txt
+
+# exclude pycharm setting file
+.idea/
+
+# python compile file
+*.pyc
