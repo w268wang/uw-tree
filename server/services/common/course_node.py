@@ -16,5 +16,17 @@ class CourseNode():
     def set_year(self, year):
         self.year = year
 
+    def get_name(self):
+        return self.name
+
+    def get_pre_list(self):
+        return self.pre_list
+
+    def get_next_list(self):
+        return self.next_list
+
+    def get_year(self):
+        return self.year
+
     def can_take(self, taken_list):
         return set(taken_list).issubset(set(self.pre_list))
