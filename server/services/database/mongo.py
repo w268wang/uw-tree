@@ -26,7 +26,7 @@ def get_course_by_subject_and_catalog(subject, catalog):
 
 def get_course_by_name(name):
     result = Course.objects.get(name = name)
-    return result.to_json()
+    return result
 
 def update_course_by_field(match_query, update_content):
     result = Course.objects.modify(query = match_query, update = update_content)
