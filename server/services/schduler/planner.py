@@ -55,10 +55,10 @@ def _build_course_tree(course_list):
         # Set prereq year info to the course node
         course_node.set_year(course_render.year_to_number(year_prereq))
 
+        course_prereq_list = course_prereq_list[0]
         # Update the existing
         for prereq_course in course_prereq_list:
-
-            if not prereq_course in course_node_dic:
+            if not prereq_course in course_node_dic.keys():
                 course_node_dic[prereq_course] = CourseNode(prereq_course)
 
             course_node.add_pre(course_node_dic[prereq_course])
@@ -80,6 +80,13 @@ def _get_start_point(course_node_list):
             start_course_list.append(course_node.get_name())
 
     return start_course_list
+
+def _clean_list():
+    """
+    handle or course situation
+    :return:
+    """
+    pass
 
 if __name__ == '__main__':
     generate_plan(['CS 135', 'CS 136', 'CS 246', 'CS 245'])
