@@ -17,19 +17,22 @@ def generate_plan(course_list):
     taken_course_list = []
 
     start_courses = _get_start_point(course_node_list)
-    plan_result[0] = start_courses
+    plan_result.append(start_courses)
     taken_course_list.extend(start_courses)
 
     remained_course_list = list(course_node_list)
 
     term_num = 1
     while len(remained_course_list) > 0:
+        print plan_result
         term_course_list = []
         for remained_course in remained_course_list:
             if remained_course.can_take(taken_course_list):
                 term_course_list.append(remained_course)
 
-        plan_result[term_num] = term_course_list
+        plan_result.append(term_course_list)
+        print remained_course_list
+        print term_course_list
         remained_course_list.remove(term_course_list)
         term_num += 1
 
@@ -55,10 +58,13 @@ def _build_course_tree(course_list):
         # Set prereq year info to the course node
         course_node.set_year(course_render.year_to_number(year_prereq))
 
-        course_prereq_list = course_prereq_list[0]
+        if len(course_prereq_list) > 0 and isinstance(course_prereq_list[0], list):
+            course_prereq_list = course_prereq_list[0]
         # Update the existing
         for prereq_course in course_prereq_list:
-            if not prereq_course in course_node_dic.keys():
+            if len(prereq_course.split('|')) > 1:
+                prereq_course = prereq_course.split('|')[0]
+            if prereq_course not in course_node_dic.keys():
                 course_node_dic[prereq_course] = CourseNode(prereq_course)
 
             course_node.add_pre(course_node_dic[prereq_course])
