@@ -32,10 +32,22 @@ def upload_courses():
     mongo.insert_list(course_object_list, Course)
 
 def upload_teapot_prereq(subject):
+
     file_name = subject + '_pre.in'
     courses_prereq_input_lines = open(CURRENT_FOLDER + file_name, 'r').read().splitlines()
     for courses_prereq_line in courses_prereq_input_lines:
-        print courses_prereq_line
+        course_prereq_parts = courses_prereq_line.split('&')
+        if len(course_prereq_parts) > 1:
+            course_name = course_prereq_parts[0]
+            course_teapot_prereq = list(eval(course_prereq_parts[1]))
+            mongo.update_course_by_name(
+                course_name,
+                {'teapot_prereq': course_teapot_prereq})
+        else:
+            mongo.update_course_by_name(
+                course_prereq_parts[0],
+                {'teapot_prereq': {}})
+
 
 
 if __name__ == '__main__':

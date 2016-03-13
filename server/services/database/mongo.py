@@ -28,9 +28,9 @@ def get_course_by_name(name):
     result = Course.objects.get(name = name)
     return result
 
-def update_course_by_field(match_query, update_content):
-    result = Course.objects.modify(query = match_query, update = update_content)
-    return result.to_json()
+def update_course_by_name(course_name, update_content):
+    result = Course.objects.get(name = course_name).modify(**update_content)
+    return result
 
 def check_student_existence(twitter_id_input):
     try:
@@ -59,9 +59,9 @@ def update_student_info(twitter_id, **modify):
 
 if __name__ == '__main__':
     # print get_course_by_subject_and_catalog("CS", "246")
-    # print update_course_by_field({'name': 'CS 246'}, {'teapot_prereq': {'a': 1}})
+    print update_course_by_name('CS 135', {'teapot_prereq': {}})
     # update_student_twitter_info('2772277171', 'a2', 'b3')
     #update_student_info(twitter_id='2772277171', current_year = 'a2', courses_taken = ['b3', 'c'])
-    update_student_info(twitter_id='2772277171', current_year = '3A', courses_taken = ['b3', 'c'],
-                        interested_courses = ['CS 452', 'CS 488s'])
+    # update_student_info(twitter_id='2772277171', current_year = '3A', courses_taken = ['b3', 'c'],
+    #                     interested_courses = ['CS 452', 'CS 488s'])
 
