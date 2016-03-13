@@ -314,4 +314,5 @@ if __name__ == '__main__':
     # print re.search(CATEGORY_PATTERN, 'REP 103Z').group(0)
     # print parse_prereq('CS 240, 241, 246, (CS 251 or ECE 222)')
     # print parse_prereq('(CS 136, 145 taken in fall 2010 or earlier or CS 146), MATH 135; Honours Mathematics students only.')
-    print parse_prereq('CS 145 taken fall 2010 or earlier or CS 146 or a grade of 60% or higher in CS 136 or 138; Honours Mathematics or Software Engineering students only.')
+    # print parse_prereq('CS 145 taken fall 2010 or earlier or CS 146 or a grade of 60% or higher in CS 136 or 138; Honours Mathematics or Software Engineering students only.')
+    print parse_prereq('CS 116 or at least 60% in CS 135 or CS 145')

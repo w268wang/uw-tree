@@ -31,6 +31,13 @@ def upload_courses():
                 print 'Failed to load ' + str(load_error_count) + ' course(s) for ' + subject_name
     mongo.insert_list(course_object_list, Course)
 
+def upload_teapot_prereq(subject):
+    file_name = subject + '_pre.in'
+    courses_prereq_input_lines = open(CURRENT_FOLDER + file_name, 'r').read().splitlines()
+    for courses_prereq_line in courses_prereq_input_lines:
+        print courses_prereq_line
+
 
 if __name__ == '__main__':
-    upload_courses()
+    # upload_courses()
+    upload_teapot_prereq('cs')

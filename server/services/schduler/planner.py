@@ -12,6 +12,9 @@ def generate_plan(course_list):
     :return: A array of length 8 representing the course plan generated.
     """
     course_node_list = _build_course_tree(course_list)
+    for c in course_node_list:
+        print c.name
+        print map(lambda x: x.name, c.pre_list)
 
     plan_result = []
     taken_course_list = []
@@ -24,16 +27,13 @@ def generate_plan(course_list):
 
     term_num = 1
     while len(remained_course_list) > 0:
-        print plan_result
         term_course_list = []
         for remained_course in remained_course_list:
             if remained_course.can_take(taken_course_list):
                 term_course_list.append(remained_course)
 
         plan_result.append(term_course_list)
-        print remained_course_list
-        print term_course_list
-        remained_course_list.remove(term_course_list)
+        remained_course_list = filter(lambda name : name in term_course_list, remained_course_list)
         term_num += 1
 
     return plan_result
@@ -87,6 +87,9 @@ def _get_start_point(course_node_list):
 
     return start_course_list
 
+def _filter_by_name(name, name_list):
+    return name in name_list
+
 def _clean_list():
     """
     handle or course situation
@@ -95,4 +98,4 @@ def _clean_list():
     pass
 
 if __name__ == '__main__':
-    generate_plan(['CS 135', 'CS 136', 'CS 246', 'CS 245'])
+    print generate_plan(['CS 135', 'CS 136', 'CS 246', 'CS 245'])
