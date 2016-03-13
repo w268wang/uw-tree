@@ -1,0 +1,90 @@
+Term 1A (Fall)
+
+CHE 102 Chemistry for Engineers 
+ENVE 100 Environmental and Geological Engineering Concepts
+CIVE 104 Mechanics 1
+CIVE 115 Linear Algebra
+MATH 116 Calculus 1 for Engineering
+CSE 1 Approved Complementary Studies Elective
+
+Term 1B (Spring)
+
+CIVE 105 Mechanics 2
+CIVE 121 Computational Methods 
+GENE 123 Electrical Circuits and Instrumentation 
+GEOE 153 Earth Engineering 
+MATH 118 Calculus 2 for Engineering
+
+Term 2A (Winter)
+
+EARTH 238 Introductory Structural Geology
+ENVE 223 Differential Equations and Balance Laws 
+ENVE 224 Probability and Statistics
+ENVE 280 Fluid Mechanics
+CSE 2 Approved Complementary Studies Elective 
+GEOE 298 Seminar
+Term 2B (Fall)
+
+CIVE 204 Solid Mechanics 1
+CIVE 221 Advanced Calculus
+EARTH 231 Mineralogy 
+EARTH 235 Stratigraphic Approaches to Understanding Earth's History 
+EARTH 260 Applied Geophysics 1 
+CSE 3 Approved Complementary Studies Elective 
+GEOE 299 Seminar 
+WKRPT 200 Work-term Report
+Term 3A (Spring)
+
+CIVE 353 Geotechnical Engineering 1
+CIVE 392 Economics and Life Cycle Analysis (List B-Engineering Economics CSE) 
+EARTH 232 Petrography 
+EARTH 458 Physical Hydrogeology
+EARTH 458L Field Methods in Hydrogeology
+GEOE 398 Seminar 
+WKRPT 300 Work-term Report
+
+Technical Electives (choose 1)
+
+ARCH 277 Timber: Design, Structure and Construction for Engineers
+CIVE 205 Solid Mechanics 2
+EARTH 221 Geochemistry 1
+
+Term 3B (Winter)
+
+CIVE 382 Hydrology and Open Channel Flow 
+EARTH 333 Introductory Sedimentology 
+EARTH 390 Methods in Geological Mapping + 
+EARTH 437 Rock Mechanics
+EARTH 438 Engineering Geology 
+CSE 4 Approved Complementary Studies Elective
+GEOE 399 Seminar
+
+Term 4A (Fall)
+
+CIVE 354 Geotechnical Engineering 2
+GEOE 400 Geological Engineering Design Project 1 
+GEOE 498 Seminar 
+WKRPT 400 Work-term Report
+Three technical electives
+Technical electives
+
+CIVE 306 Mechanics of Solids 3
+CIVE 310 Introduction to Structural Design
+CIVE 375 Environmental Engineering Principles
+EARTH 331 Volcanology and Igneous Petrology
+EARTH 332 Metamorphic Petrology
+EARTH 342 Geomorphology and GIS Applications 
+EARTH 359 Flow Through Porous Media
+EARTH 421 Geochemistry 2
+EARTH 440 Quaternary Geology 
+EARTH 444 Applied Wetland Science
+EARTH 461 Applied Geophysics 3 (Earth 461 and Earth 461L count as one technical elective) and
+  EARTH 461L Field Methods in Applied Geophysics 
+
+Term 4B (Winter)
+
+CIVE 554 Geotechnical Engineering 3
+GEOE 401 Geological Engineering Design Project 2
+GEOE 499 Seminar
+GENE 411 Engineering Law and Ethics (List D-Other CSE)
+Two technical electives 

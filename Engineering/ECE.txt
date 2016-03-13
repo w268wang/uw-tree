@@ -1,0 +1,538 @@
+            Term
+            CE or EE
+            Course/Milestone
+            Title and Notes
+
+            Cls
+
+
+            Tut
+
+            Lab
+
+
+
+
+
+            Academic Term 1A Fall
+
+            n/a
+            CHE 102
+            Chemistry for Engineers
+            3
+            1
+            0
+
+
+            n/a 
+            ECE 100A
+            Electrical and Computer Engineering Practice (see note 4)
+            2
+            0
+            0
+
+
+            n/a 
+            ECE 105
+            Physics of Electrical Engineering 1 (see note 6)
+            3
+            2
+            0
+
+
+            n/a 
+            ECE 140
+            Linear Circuits
+            3
+            2
+            2
+
+
+            n/a 
+            ECE 150
+            Fundamentals of Programming
+            3
+            1
+            2
+
+
+            n/a 
+            MATH 117
+            Calculus 1 for Engineering
+            3
+            2
+            0
+
+
+            n/a 
+            English Language Proficiency Milestone
+
+
+            n/a 
+            Workplace Hazardous Materials Milestone
+
+
+
+            Academic Term 1B Winter8, Spring4S
+
+            n/a 
+            ECE 100B
+            Electrical and Computer Engineering Practice (see note 4)
+            2
+            0
+            0
+
+
+            n/a 
+            ECE 103
+            Discrete Mathematics
+            3
+            2
+            0
+
+
+            n/a 
+            ECE 106
+            Physics of Electrical Engineering 2 (see note 6)
+            3
+            2
+            1.5
+
+
+            n/a 
+            ECE 124
+            Digital Circuits and Systems
+            3
+            1
+            1.5
+
+
+            n/a 
+            ECE 155
+            Engineering Design with Embedded Systems
+            3
+            1
+            1.5
+
+
+            n/a 
+            MATH 119
+            Calculus 2 for Engineering
+            3
+            2
+            0
+
+
+
+            Work Term Winter4S, Spring8
+
+            n/a 
+            COOP 1
+            Co-operative Work Term
+
+
+            n/a 
+            PD 20
+            Engineering Workplace Skills I: Developing Reasoned Conclusions
+
+
+
+            Academic Term 2A Fall8, Winter4S
+
+            n/a 
+            ECE 200A
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            n/a
+            ECE 204A
+            Numerical Methods 1
+            0 
+            0 
+            2 
+
+
+            n/a
+            ECE 205
+            Advanced Calculus 1 for Electrical and Computer Engineers
+            3 
+            1 
+            0
+
+
+            n/a 
+            ECE 222
+            Digital Computers
+            3
+            1
+            1.5
+
+
+            n/a 
+            ECE 240
+            Electronic Circuits 1
+            3
+            1
+            1.5
+
+
+            n/a 
+            ECE 250
+            Algorithms and Data Structures
+            3
+            1
+            1.5
+
+
+            n/a 
+            ECE 290
+            Engineering Profession, Ethics, and Law
+            3
+            1
+            0
+
+
+            n/a 
+            MATH 215
+            Linear Algebra for Engineering
+            3
+            1
+            0 
+
+
+
+            Work Term Fall4S, Winter8
+
+            n/a 
+            COOP 2
+            Co-operative Work Term
+
+
+            n/a 
+            PD 21
+            Engineering Workplace Skills II: Developing Effective Plans
+
+
+
+            Academic Term 2B Spring8, Fall4S
+
+            n/a 
+            ECE 200B
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            EE
+            ECE 204B 
+            Numerical Methods 2
+            0 
+            0 
+            2 
+
+
+            EE
+            ECE 206
+            Advanced Calculus 2 for Electrical Engineering
+            3
+            1 
+            0
+
+
+            n/a 
+            ECE 207
+            Signals and Systems
+            3
+            1
+            0
+
+
+            n/a 
+            ECE 242
+            Electronic Circuits 2
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 224
+            Embedded Microprocessor Systems
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 254
+            Operating Systems and Systems Programming
+            3
+            1
+            1.5
+
+
+            EE
+            ECE 209
+            Electronic and Electrical Properties of Materials
+            3
+            1
+            1.5
+
+
+            n/a 
+            WKRPT 2014S
+            Work-term Report (see note 4)
+
+
+            n/a 
+            One elective course (see note 1)
+
+
+            n/a 
+            Technical Presentation Milestone
+
+
+
+            Work Term Spring4S, Fall8
+
+            n/a
+            COOP 3
+            Co-operative Work Term
+
+
+            n/a 
+            Professional Development Elective (one of PD 3, PD 4, PD 5, PD 6, PD 7, PD 8, PD 9)
+
+
+
+            Academic Term 3A Winter8, Spring4S
+
+            n/a 
+            ECE 300A
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            n/a 
+            ECE 316
+            Probability Theory and Statistics
+            3
+            1
+            0
+
+
+            n/a 
+            ECE 380
+            Analog Control Systems
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 327
+            Digital Hardware Systems
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 351
+            Compilers
+            3
+            1
+            1.5
+
+
+            EE
+            ECE 331
+            Electronic Devices
+            3
+            1
+            1.5
+
+
+            EE
+            ECE 375
+            Electromagnetic Fields and Waves
+            3
+            1
+            1.5
+
+
+            n/a 
+            WKRPT 2018
+            Work-term Report (see note 4)
+
+
+            n/a 
+            WKRPT 3014S
+            Work-term Report (see note 4)
+
+
+            n/a
+            One elective course (see note 1)
+
+
+
+            Work Term Winter4S, Spring8
+
+            n/a 
+            COOP 4
+            Co-operative Work Term
+
+
+            n/a 
+            Professional Development Elective (one of PD 3, PD 4, PD 5, PD 6, PD 7, PD 8, PD 9)
+
+
+
+            Academic Term 3B Fall8, Winter4S
+
+            n/a 
+            ECE 300B
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            n/a 
+            ECE 318
+            Analog and Digital Communications
+            3
+            1
+            1.5
+
+
+            n/a 
+            ECE 390
+            Engineering Design, Economics, and Impact on Society
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 356
+            Database Systems
+            3
+            1
+            1.5
+
+
+            CE
+            ECE 358
+            Computer Networks
+            3
+            1
+            1.5
+
+
+            EE
+            ECE 224
+            Embedded Microprocessor Systems
+            3
+            1
+            1.5
+
+
+            EE
+            ECE 361
+            Power Systems and Components
+            3
+            1
+            1.5
+
+
+            n/a 
+            WKRPT 3018
+            Work-term Report (see note 4)
+
+
+            n/a 
+            WKRPT 4014S
+            Work-term Report (see note 4)
+
+
+            n/a 
+            One elective course (see note 1)
+
+
+
+            Work Term Fall4S, Winter8
+
+            n/a 
+            COOP 5
+            Co-operative Work Term
+
+
+            n/a 
+            Professional Development Elective (one of PD 3, PD 4, PD 5, PD 6, PD 7, PD 8, PD 9)
+
+
+
+            Academic Term 4A Spring
+
+            n/a 
+            ECE 400A
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            n/a 
+            ECE 498A/GENE 403
+            Engineering Design Project (see note 2 and note 7)
+            1
+            0
+            10
+
+
+            n/a 
+            WKRPT 4018
+            Work-term Report (see note 4)
+
+
+            n/a 
+            Four elective courses (see note 1)
+
+
+
+            Work Term Fall
+
+            n/a 
+            COOP 6
+            Co-operative Work Term
+
+
+
+            Academic Term 4B Winter
+
+             
+            n/a
+            ECE 400B
+            Electrical and Computer Engineering Practice (see note 4)
+            1
+            0
+            0
+
+
+            n/a 
+            ECE 498B/GENE 404
+            Engineering Design Project (see note 2 and note 7)
+            1
+            0
+            10
+
+
+            n/a 
+            Four elective courses (see note 1) 

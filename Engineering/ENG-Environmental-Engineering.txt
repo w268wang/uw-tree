@@ -1,0 +1,64 @@
+Term 1A (Fall)
+
+CHE 102 Chemistry for Engineers 
+ENVE 100 Environmental and Geological Engineering Concepts
+CIVE 104 Mechanics 1
+CIVE 115 Linear Algebra
+MATH 116 Calculus 1 for Engineering
+CSE 1 Approved Complementary Studies Elective
+
+Term 1B (Spring)
+
+CIVE 105 Mechanics 2
+CIVE 121 Computational Methods
+ENVE 153 Earth Engineering
+GENE 123 Electrical Circuits and Instrumentation 
+MATH 118 Calculus 2 for Engineering
+
+Term 2A (Winter)
+
+ENVE 223 Differential Equations and Balance Laws
+ENVE 224 Probability and Statistics 
+ENVE 275 Environmental Chemistry
+ENVE 280 Fluid Mechanics 
+ERS 215 Environmental and Sustainability Assessment 1 (List A-Impact Courses CSE) 
+
+Term 2B (Fall)
+
+BIOL 240 Fundamentals of Microbiology
+CIVE 382 Hydrology and Open Channel Flow
+ENVE 225 Environmental Modelling
+ENVE 277 Air Quality Engineering
+ENVE 279 Energy and the Environment
+WKRPT 200 Work-term Report
+
+Term 3A (Spring)
+
+CIVE 353 Geotechnical Engineering 1
+CIVE 392 Economics and Life Cycle Analysis (List B-Engineering Economics CSE)
+EARTH 458 Physical Hydrogeology
+EARTH 458L Field Methods in Hydrogeology
+ENVE 330 Lab Analysis and Field Sampling Techniques
+ENVE 375 Physico-Chemical Processes 
+WKRPT 300 Work-term Report
+
+Term 3B (Winter)
+
+ENVE 335 Decision Making for Environmental Engineers
+ENVE 376 Biological Processes
+ENVE 383 Advanced Hydrology and Hydraulics
+ENVE 391 Law and Ethics for Environmental Engineers (List D-Other CSE)
+One Technical Elective
+
+Term 4A (Fall)
+
+ENVE 400 Environmental Engineering Project 1 
+Three Technical Electives
+One Complementary Studies Elective (CSE 2)  
+WKRPT 400 Work-term Report
+
+Term 4B (Winter)
+
+ENVE 401 Environmental Engineering Project 2 
+Three Technical Electives
+One Complementary Studies Elective (CSE 3)

@@ -1,0 +1,101 @@
+            Term
+            Courses
+        
+    
+    
+    
+    
+        
+            1A 
+            (F)
+            
+            
+            CHE 102
+            
+            MATH 115
+            MATH 116
+            ME 100
+            PHYS 115
+            
+            
+             
+            
+        
+        
+            1B 
+            (W,S)
+            ME 100B
+            
+            GENE 123
+            MATH 118
+            ME 101
+            ME 115
+            1 CSE
+            
+            
+             
+        
+        
+            2A 
+            (F,W) 
+            ME 200A
+            ME 201
+            ME 202
+            ME 219
+            ME 230
+            ME 269
+            1 CSE 
+             
+        
+        
+            2B 
+            (S,F)
+            ME 200B
+            ME 203
+            ME 212
+            ME 220
+            ME 250
+            ME 262
+            WKRPT 200*
+        
+        
+            3A 
+            (W,S) 
+            ME 300A
+            ME 303
+            ME 321
+            ME 340
+            ME 351
+            ME 354
+            WKRPT 200# 
+            WKRPT 300*
+        
+        
+            3B 
+            (F,W) 
+            ME 300B
+            ME 322
+            ME 353
+            ME 360
+            ME 362
+            ME 380
+            MSCI 261 Δ
+            WKRPT 300#
+        
+        
+            4A 
+            (S,F)
+            ME 400A
+            ME 481 ++
+            3 TECH ELECT
+            1 CSE
+            WKRPT 400* 
+            WKRPT 400#
+        
+        
+            4B 
+            (W)
+            ME 400B
+            ME 482 ++
+            4 TECH ELECT 
+            1 CSE

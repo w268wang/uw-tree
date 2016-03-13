@@ -1,0 +1,270 @@
+            1A Fall
+            CHE 102 Chemistry for Engineers 
+            3
+            2
+            0
+        
+        
+            MSCI 100 Management Engineering Concepts 
+            3
+            2
+            3
+        
+        
+            MATH 115 Linear Algebra for Engineering 
+            3
+            2
+            0
+        
+        
+            MATH 116 Calculus 1 for Engineering 
+            3
+            2
+            0
+        
+        
+            PHYS 115 Mechanics 
+            3
+            2
+            0
+        
+        
+            1B Winter
+            MSCI 100B Seminar
+            1
+            0
+            0
+        
+        
+            GENE 123 Electrical Circuits and Instrumentation 
+            3
+            1
+            1.5
+        
+        
+            MSCI 121 Introduction to Computer Programming
+            3
+            2
+            0
+        
+        
+            MSCI 131 Work Design and Facilities Planning
+            3
+            1
+            1.5
+        
+        
+            MSCI 261 Engineering Economics: Financial Management for Engineers 
+            3
+            1
+            0
+        
+        
+            MATH 118 Calculus 2 for Engineering 
+            3
+            2
+            0
+        
+        
+            PHYS 125 Physics for Engineers
+            3
+            2
+            0
+        
+        
+            2A Fall 
+            MSCI 200A Seminar
+            1
+            0
+            0
+        
+        
+            MSCI 240 Algorithms and Data Structures
+            3
+            1
+            1.5
+        
+        
+            MSCI 262 Managerial and Cost Accounting
+            3
+            1
+            0
+        
+        
+            MSCI 271 Advanced Calculus and Numerical Methods
+            3
+            2
+            0
+        
+        
+            ME 235 Materials Science and Engineering 
+            3
+            1
+            3
+        
+        
+            ME 250 Thermodynamics 1 
+            3
+            1
+            0
+        
+        
+            2B Spring
+            MSCI 200B Seminar 
+            1
+            0
+            0
+        
+        
+            MSCI 211 Organizational Behaviour 
+            3
+            1
+            0
+        
+        
+            MSCI 252 Probability and Statistics for Engineers 
+            3
+            1
+            0
+        
+        
+            MSCI 263 Managerial Economics
+            3
+            1
+            0
+        
+        
+            MSCI 331 Introduction to Optimization 
+            3
+            1
+            0
+        
+        
+            MSCI 346 Database Systems 
+            3
+            1
+            1.5
+        
+        
+            ME 219 Mechanics of Deformable Solids 1 
+            3
+            1
+            0
+        
+        
+            3A Winter
+            MSCI 300A Seminar
+            1
+            0
+            0
+        
+        
+            MSCI 311 Organizational Design and Technology 
+            3
+            1
+            0
+        
+        
+            MSCI 334 Operations Planning and Inventory Control
+            3
+            1
+            1.5
+        
+        
+            MSCI 431 Stochastic Models and Methods 
+            3
+            1
+            0
+        
+        
+            MSCI 444 Information Systems Analysis and Design 
+            3
+            1
+            0
+        
+        
+            Elective 
+        
+        
+            MSCI 391 Work-term Report 
+        
+        
+            3B Fall 
+            MSCI 300B Seminar 
+            1
+            0
+            0
+        
+        
+            MSCI 332 Deterministic Optimization Models and Methods 
+            3
+            1
+            0
+        
+        
+            MSCI 333 Simulation Analysis and Design 
+            3
+            1
+            1.5
+        
+        
+            MSCI 342 Principles of Software Engineering 
+            3
+            1
+            1.5
+        
+        
+            Elective
+        
+        
+            Elective
+        
+        
+            MSCI 392 Work-term Report 
+        
+        
+            4A Spring
+            MSCI 400A Seminar
+            1
+            0
+            0
+        
+        
+            MSCI 401 Management Engineering Design Project 1 
+            3
+            0
+            0
+        
+        
+            MSCI 434 Supply Chain Management 
+            3
+            1
+            1.5
+        
+        
+            MSCI 445 Telecommunication Systems: from protocols to applications
+            3
+            1
+            1.5
+        
+        
+            Elective 
+        
+        
+            Elective
+        
+        
+            MSCI 491 Work-term Report 
+        
+        
+            4B Winter
+            MSCI 400B Seminar 
+            1
+            0
+            0
+        
+        
+            MSCI 402 Management Engineering Design Project 2 
+            3
+            0
+            0

@@ -1,0 +1,356 @@
+            Term
+            Course and Title
+            Cls 
+            Tut 
+            Lab 
+        
+    
+    
+        
+            
+            1A Fall 
+            
+            MATH 117 Calculus 1 for Engineering 
+            3
+            2 
+            0
+        
+        
+            NE 100 Introduction to Nanotechnology Engineering 
+            3
+            2 
+            1 
+        
+        
+            NE 101 Nanotechnology Engineering Practice
+            1
+            0
+            0
+        
+        
+            NE 109 Societal and Environmental Impacts of Nanotechnology 
+            2 
+            1 
+            0 
+        
+        
+            NE 111 Introduction to Engineering Computing ≠
+            2
+            0
+            0
+        
+        
+            NE 112 Linear Algebra for Nanotechnology Engineering
+            3
+            1
+            0
+        
+        
+            NE 121 Chemical Principles 
+            4
+            1
+            0
+        
+        
+            1B Winter
+            MATH 119 Calculus 2 for Engineering 
+            3
+            2
+            0
+        
+        
+            NE 102 Introduction to Nanomaterials Health Risk; Nanotechnology Engineering Practice ‡ 
+            1
+            0
+            0
+        
+        
+            NE 113 Introduction to Computational Methods 
+            3
+            1 
+            2
+        
+        
+            NE 122 Organic Chemistry for Nanotechnology Engineers 
+            3 
+            1 
+            1.5 
+        
+        
+            NE 125 Introduction to Materials Science and Engineering 
+            3 
+            1 
+            0 
+        
+        
+            NE 131 Physics for Nanotechnology Engineering
+            4
+            1
+            0
+        
+        
+            2A Fall
+            NE 201 Nanotoxicology; Nanotechnology Engineering Practice ‡ 
+            1
+            0
+            0
+        
+        
+            NE 215 Probability and Statistics 
+            3
+            1
+            0
+        
+        
+            NE 216 Advanced Calculus 1 for Nanotechnology Engineering
+            3 
+            1
+            2 
+        
+        
+            NE 220L Materials Science and Engineering Laboratory
+            0
+            0
+            1.5
+        
+        
+            NE 224 Biochemistry for Nanotechnology Engineers 
+            3
+            1
+            1.5
+        
+        
+            NE 232 Quantum Mechanics 
+            3
+            1
+            0
+        
+        
+            NE 241 Electromagnetism
+            3
+            2
+            1.5
+        
+        
+            2B Spring 
+            MSCI 261 Engineering Economics: Financial Management for Engineers 
+            3
+            1
+            0
+        
+        
+            NE 202 Nanotechnology Environmental and Occupational Health; Nanotechnology Engineering Practice ‡ 
+            1
+            0
+            0
+        
+        
+            NE 217 Advanced Calculus 2 for Nanotechnology Engineering
+            3
+            1
+            2
+        
+        
+            NE 225 Structure and Properties of Nanomaterials
+            3
+            1
+            0
+        
+        
+            NE 226 Characterization of Materials 
+            3 
+            1 
+            0
+        
+        
+            NE 226L Laboratory Characterization Methods
+            0
+            0
+            1.5
+        
+        
+            NE 242 Semiconductor Physics and Devices 
+            3
+            2
+            1.5
+        
+        
+            NE 250 Work-term Report 1  
+        
+        
+            3A Spring
+            NE 301 Nanotechnology Human Risks and Consumer Products; Nanotechnology Engineering Practice ‡ 
+            1
+            0
+            0
+        
+        
+            NE 318 Continuum Mechanics for Nanotechnology Engineering 
+            3
+            1
+            0
+        
+        
+            NE 320L Characterization of Materials Laboratory
+            0
+            0
+            1.5
+        
+        
+            NE 333 Macromolecular Science 
+            3
+            1
+            0
+        
+        
+            NE 334 Statistical Thermodynamics 
+            3
+            1
+            0
+        
+        
+            NE 343 Microfabrication and Thin-film Technology 
+            3
+            1
+            0
+        
+        
+            NE 344 Electronic Circuits and Integration 
+            3
+            2
+            1.5
+        
+        
+            NE 350 Work-term Report 2
+        
+        
+            CSE Complementary Studies Elective  
+        
+        
+            3B Fall
+            NE 302 Nanotechnology Engineering Practice 
+            1
+            0
+            0
+        
+        
+            NE 307 Introduction to Nanosystems Design 
+            2
+            0
+            0
+        
+        
+            NE 330L Macromolecular Science Laboratory 
+            0
+            0
+            1.5
+        
+        
+            NE 336 Micro and Nanosystem Computer-aided Design 
+            3
+            1
+            1.5
+        
+        
+            NE 340L Microfabrication and Thin-film Technology Laboratory
+            0
+            0
+            1.5
+        
+        
+            CSE Complementary Studies Elective 
+        
+        
+            Three Technical Electives
+        
+        
+            4A Fall
+            NE 408 Nanosystems Design Project 
+            0
+            0
+            10
+        
+        
+            NE 450 Work-term Report 3
+        
+        
+            Two Senior Laboratory course electives selected from: 
+        
+        
+            NE 454A Nano-instrumentation Laboratory 1
+            0
+            0 
+            1.5 
+        
+        
+            NE 454B Nano-electronics Laboratory 1
+            0 
+            0 
+            1.5 
+        
+        
+            NE 454C Nanobiosystems Laboratory 1
+            0
+            0 
+            1.5 
+        
+        
+            NE 454D Nanomaterials Laboratory 1
+            0 
+            0 
+            1.5 
+        
+        
+            CSE Complementary Studies Elective 
+        
+        
+            Three Technical Electives
+        
+        
+            Optional course taken as an extra: ≠≠
+        
+        
+            NE 450L Nanoprobing and Lithography Laboratory 
+            0
+            0
+            1.5
+        
+        
+            4B Winter
+            NE 409 Nanosystems Design Project and Symposium 
+            0
+            0
+            10
+        
+        
+            Two Senior Laboratory course electives selected from: 
+        
+        
+            NE 455A Nano-instrumentation Laboratory 2
+            0
+            0
+            1.5
+        
+        
+            NE 455B Nano-electronics Laboratory 2
+            0 
+            0
+            1.5
+        
+        
+            NE 455C Nanobiosystems Laboratory 2
+            0
+            0
+            1.5
+        
+        
+            NE 455D Nanomaterials Laboratory 2
+            0
+            0
+            1.5
+        
+        
+            CSE Complementary Studies Elective  
+        
+        
+            Three Technical Electives

@@ -1,0 +1,67 @@
+Term 1A (Fall) 
+CHE 102
+CIVE 100
+CIVE 104
+CIVE 115
+MATH 116
+Complementary Studies Elective
+
+Term 1B (Winter) 
+CIVE 105
+CIVE 121
+CIVE 153
+CIVE 199
+GENE 123
+MATH 118
+
+Term 2A (Fall) 
+CIVE 204
+CIVE 221
+CIVE 224
+CIVE 241
+CIVE 265
+CIVE 298
+
+Term 2B (Spring) 
+CIVE 205
+CIVE 222
+CIVE 230
+CIVE 280
+CIVE 299
+CIVE 392
+
+Term 3A (Winter) 
+CIVE 303
+CIVE 332
+CIVE 341
+CIVE 353
+CIVE 382
+CIVE 398
+Complementary Studies Elective
+WKRPT 200
+
+Term 3B (Fall) 
+CIVE 310
+CIVE 375
+CIVE 399
+TE 1 Approved Technical Elective
+TE 2 Approved Technical Elective
+Complementary Studies Elective
+WKRPT 300
+
+Term 4A (Spring)
+CIVE 400
+CIVE 491
+CIVE 498
+TE 3 or CSE 3* Approved Technical Elective or Complementary Studies Elective
+TE 4 Approved Technical Elective
+CSE 4 or TE 5* Approved Complementary Studies Elective or Technical Elective
+WKRPT 400
+
+Term 4B (Winter)
+CIVE 401 Civil Engineering Project 2 
+CIVE 499 Seminar 
+CSE 4 or TE 5* Approved Complementary Studies Elective or Technical Elective
+TE 6 Approved Technical Elective
+TE 7 Approved Technical Elective
+TE 8 Approved Technical Elective

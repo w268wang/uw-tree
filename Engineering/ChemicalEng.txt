@@ -1,0 +1,248 @@
+            1A Fall4,8
+            CHE 100
+            Chemical Engineering Concepts 1 (3 LEC,2 TUT*,6 LAB**)
+            CHE 102 
+            Chemistry for Engineers (3 LEC,2 TUT) 
+
+
+            MATH 115 
+            Linear Algebra for Engineering (3 LEC,2 TUT) 
+
+
+            MATH 116 
+            Calculus 1 for Engineering (3 LEC,2 TUT)
+
+
+            PHYS 115 
+            Mechanics (3 LEC,2 TUT) 
+
+
+
+            1B Winter8 and Spring4
+
+            CHE 101
+            Chemical Engineering Concepts 2 (3 LEC,2 TUT***,2 LAB)
+
+
+            CHE 121 
+            Engineering Computation (3 LEC,2 TUT) 
+
+
+            CHE 161
+            Engineering Biology (3 LEC,1 TUT) 
+
+
+            GENE 123 
+            Electrical Circuits and Instrumentation (3 LEC,1 TUT,3 LAB‡) 
+
+
+            MATH 118 
+            Calculus 2 for Engineering (3 LEC,2 TUT) 
+
+
+            CSE  
+            Approved Complementary Studies Elective (3 LEC+) 
+
+
+
+            2A Fall8 and Winter4
+
+            CHE 200
+            Equilibrium Stage Operations (3 LEC,1 TUT)
+
+
+            CHE 220 
+            Process Data Analysis (3 LEC,1 TUT) 
+
+
+            CHE 230 
+            Physical Chemistry 1 (3 LEC,1 TUT) 
+
+
+            CHE 290 
+            Chemical Engineering Lab 1 (3 LAB) 
+
+
+            CHEM 262 
+            Organic Chemistry for Engineering and Bioinformatics Students (3 LEC,1 TUT) 
+
+
+            CHEM 262L 
+            Organic Chemistry Laboratory for Engineering Students (3 LAB) 
+
+
+            MATH 217 
+            Calculus 3 for Chemical Engineering (3 LEC,1 TUT) 
+
+
+            CHE 298
+            Directed Research Project (6PRJ) (optional extra)
+
+
+
+            2B Spring8 and Fall4
+
+            CHE 211
+            Fluid Mechanics (3 LEC,1 TUT)
+
+
+            CHE 231 
+            Physical Chemistry 2 (3 LEC,1 TUT) 
+
+
+            CHE 241 
+            Materials Science and Engineering (3 LEC,1 TUT) 
+
+
+            CHE 291 
+            Chemical Engineering Lab 2 (3 LAB) 
+
+
+            MATH 218 
+            Differential Equations for Engineers (3 LEC,1 TUT) 
+
+
+            MSCI 261 
+            Engineering Economics: Financial Management for Engineers (3 LEC,1 TUT) 
+
+
+            WKRPT 2004 
+            Work-term Report 
+
+
+            CHE 299
+            Directed Research Project (6 PRJ) (optional extra)
+
+
+
+            3A Winter8 and Spring4
+
+            CHE 312
+            Mathematics of Heat and Mass Transfer (3 LEC,1 TUT)
+
+
+            CHE 314 
+            Chemical Reaction Engineering (3 LEC,1 TUT) 
+
+
+            CHE 322 
+            Numerical Methods for Process Analysis and Design (3 LEC,1 TUT) 
+
+
+            CHE 330 
+            Chemical Engineering Thermodynamics (3 LEC,1 TUT) 
+
+
+            CHE 390 
+            Chemical Engineering Lab 3 (3 LAB) 
+
+
+            CSE  
+            Approved Complementary Studies Elective (3 LEC+) 
+
+
+            WKRPT 2008 
+            Work-term Report 
+
+
+            WKRPT 3004 
+            Work-term Report 
+
+
+            CHE 398
+            Directed Research Project (6 PRJ) (optional extra)
+
+
+
+            3B Fall8 and Winter4
+
+            CHE 313 
+            Applications of Heat and Mass Transfer (3 LEC,1 TUT) 
+
+
+            CHE 331 
+            Electrochemical Engineering (3 LEC,1 TUT) 
+
+
+            CHE 361 
+            Bioprocess Engineering (3 LEC,1 TUT)
+
+
+            CHE 391 
+            Chemical Engineering Lab 4 (3 LAB) 
+
+
+            TE  or
+            CSE or CHE 4254,8 
+            Approved Technical or Complementary Studies Elective (3 LEC+) or Strategies for Process Improvement and Product Development (3 LEC,1 TUT)
+
+
+            TE or CSE
+            Approved Technical or Complementary Studies Elective (3 LEC+)
+
+
+            WKRPT 3008 
+            Work-term Report 
+
+
+            CHE 399
+            Directed Research Project (6 PRJ) (optional extra)
+
+
+
+            4A Spring8 and Fall4
+
+            CHE 420
+            Introduction to Process Control (3LEC,1 TUT)
+
+
+            CHE 480 
+            Process Analysis and Design (3 LEC,2 TUT) 
+
+
+            CHE 482 
+            Chemical Engineering Design Workshop (2 LEC,3 PRJ) 
+
+
+            CHE 490
+            Chemical Engineering Lab 5(4 LAB) 
+
+
+            TE  or
+            CSE or CHE 4254 
+            Approved Technical or Complementary Studies Elective (3 LEC+) or Strategies for Process Improvement and Product Development (3 LEC,1 TUT) 
+
+
+            TE or CSE
+            Approved Technical or Complementary Studies Elective (3 LEC+) 
+
+
+            WKRPT 4004,8 
+            Work-term Report 
+
+
+            CHE 498
+            Directed Research Project (6 PRJ) (optional extra)
+
+
+
+            4B Winter4,8
+
+            CHE 483
+            Group Design Project (1 LEC,9 PRJ)
+
+
+            TE or CSE  
+            Approved Technical or Complementary Studies Elective (3 LEC+) 
+
+
+            TE or CSE
+            Approved Technical or Complementary Studies Elective (3 LEC+) 
+
+
+            TE or CSE  
+            Approved Technical or Complementary Studies Elective (3 LEC+) 
+
+
+            TE or CSE or CHE 4254,8 
+            Approved Technical or Complementary Studies Elective (3 LEC+) or Strategies for Process Improvement and Product Development (3 LEC,1 TUT)

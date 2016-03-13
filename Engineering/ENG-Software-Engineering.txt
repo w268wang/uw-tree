@@ -1,0 +1,325 @@
+            Term
+            Course and Title
+            Cls
+            Tut
+            Lab
+        
+    
+    
+        
+            
+            1A Fall
+            
+            CS 137 Programming Principles
+            3
+            1
+            2
+        
+        
+            ECE 105 Physics of Electrical Engineering 1
+            3
+            1
+            0
+        
+        
+            ECE 140 Linear Circuits
+            3
+            2
+            1
+        
+        
+            MATH 115 Linear Algebra for Engineering
+            3
+            2
+            0
+        
+        
+            MATH 117 Calculus 1 for Engineering
+            3
+            2
+            0
+        
+        
+            SE 101 Introduction to Methods of Software Engineering**
+            1
+            0
+            2
+        
+        
+            
+            1B Winter
+            
+            SE 102 Seminar
+            1
+            0
+            0
+        
+        
+            CS 138 Introduction to Data Abstraction and Implementation
+            3
+            1
+            2
+        
+        
+            ECE 106 Physics of Electrical Engineering 2
+            3
+            1
+            1.5 
+        
+        
+            ECE 124 Digital Circuits and Systems
+            3
+            1
+            1.5
+        
+        
+            MATH 119 Calculus 2 for Engineering
+            3
+            2
+            0
+        
+        
+            MATH 135 Algebra for Honours Mathematics
+            3
+            1
+            0
+        
+        
+            
+            2A Fall
+            
+            SE 201 Seminar
+            1
+            0
+            0
+        
+        
+            CHE 102 Chemistry for Engineers
+            3
+            2
+            0
+        
+        
+            CS 241 Foundations of Sequential Programs
+            3
+            1 
+            2
+        
+        
+            ECE 222 Digital Computers
+            3
+            1
+            3*
+        
+        
+            SE 212 Logic and Computation
+            3
+            1
+            0
+        
+        
+            STAT 206 Statistics for Software Engineering (see note 5)
+            3
+            1
+            0
+        
+        
+            Communication Elective (see note 6)
+            3
+            +
+            + 
+        
+        
+            
+            2B Spring
+            
+            SE 202 Seminar
+            1
+            0
+            0
+        
+        
+            CS 240 Data Structures and Data Management
+            3
+            0
+            3 
+        
+        
+            CS 247 Software Engineering Principles ***
+            3
+            1
+            3
+        
+        
+            MSCI 261 Engineering Economics:  Financial Management for Engineers
+            3 
+            1
+            0
+        
+        
+            MATH 213 Advanced Mathematics for Software Engineers
+            3
+            1
+            0 
+        
+        
+            MATH 239 Introduction to Combinatorics
+            3 
+            1
+            0
+        
+        
+            Elective (see note 1)
+            3
+            +
+            +
+        
+        
+            WKRPT 200 Work-term Report
+        
+        
+            TPM 000 CR/NCR
+        
+        
+            
+            3A Winter
+            
+            SE 301 Seminar
+            1
+            0
+            0
+        
+        
+            CS 341 Algorithms
+            3
+            0
+            3
+        
+        
+            CS 349 User Interfaces ***
+            3
+            0
+            1
+        
+        
+            SE 350 Operating Systems
+            3
+            1
+            1.5
+        
+        
+            SE 465 Software Testing and Quality Assurance ***
+            3
+            1
+            3
+        
+        
+            Elective (see note 1)
+            3
+            +
+            +
+        
+        
+            
+            3B Fall
+            
+            SE 302 Seminar
+            1 
+            0
+            0 
+        
+        
+            CS 343 Concurrent and Parallel Programming
+            3
+            0
+            3
+        
+        
+            CS 348 Introduction to Database Management
+            3 
+            0 
+            0
+        
+        
+            SE 380 Introduction to Feedback Control
+            3
+            1
+            1.5 
+        
+        
+            SE 390 Design Project Planning ***
+            2 
+            0
+            2
+        
+        
+            SE 464 Software Design and Architectures ***
+            3
+            1
+            3
+        
+        
+            Elective (see note 1)
+            3
+            +
+            +
+        
+        
+            WKRPT 300 Work-term Report
+        
+        
+            
+            4A Spring
+            
+            SE 401 Seminar
+            1
+            0
+            0
+        
+        
+            ECE 358 Computer Networks 
+            3
+            1
+            1.5
+        
+        
+            SE 463 Software Requirements Specification and Analysis ***
+            3
+            1
+            3
+        
+        
+            SE 490 Design Project 1 ***
+            2
+            0
+            9
+        
+        
+            Two Electives (see notes 1 and 2)
+            3 
+            +
+            +
+        
+        
+            WKRPT 400 Work-term Report  
+        
+        
+            
+            4B Winter
+            
+            SE 402 Seminar
+            1
+            0
+            0
+        
+        
+            SE 491 Design Project 2 ***
+            2
+            0
+            2 
+        
+        
+            Five Electives (see notes 1 and 2) 
+            3
+            +
+            +
