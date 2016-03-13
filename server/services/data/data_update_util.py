@@ -31,25 +31,29 @@ def upload_courses():
                 print 'Failed to load ' + str(load_error_count) + ' course(s) for ' + subject_name
     mongo.insert_list(course_object_list, Course)
 
-def upload_teapot_prereq(subject):
+def upload_teapot_prereq(subject_list):
 
-    file_name = subject + '_pre.in'
-    courses_prereq_input_lines = open(CURRENT_FOLDER + file_name, 'r').read().splitlines()
-    for courses_prereq_line in courses_prereq_input_lines:
-        course_prereq_parts = courses_prereq_line.split('&')
-        if len(course_prereq_parts) > 1:
-            course_name = course_prereq_parts[0]
-            course_teapot_prereq = list(eval(course_prereq_parts[1]))
-            mongo.update_course_by_name(
-                course_name,
-                {'teapot_prereq': course_teapot_prereq})
-        else:
-            mongo.update_course_by_name(
-                course_prereq_parts[0],
-                {'teapot_prereq': {}})
+    for subject in subject_list:
+        try:
+            file_name = subject + '_pre.in'
+            courses_prereq_input_lines = open(CURRENT_FOLDER + file_name, 'r').read().splitlines()
+            for courses_prereq_line in courses_prereq_input_lines:
+                course_prereq_parts = courses_prereq_line.split('&')
+                if len(course_prereq_parts) > 1:
+                    course_name = course_prereq_parts[0]
+                    course_teapot_prereq = list(eval(course_prereq_parts[1]))
+                    mongo.update_course_by_name(
+                        course_name,
+                        {'teapot_prereq': {'course': course_teapot_prereq}})
+                else:
+                    mongo.update_course_by_name(
+                        course_prereq_parts[0],
+                        {'teapot_prereq': {}})
+        except Exception, ex:
+            print ex
 
 
 
 if __name__ == '__main__':
     # upload_courses()
-    upload_teapot_prereq('cs')
+    upload_teapot_prereq(['cs', 'math'])
