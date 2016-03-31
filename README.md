@@ -24,4 +24,4 @@ Web crawler development skills
 Communicate with MongoDB with Document-Object Mapper (like the ORM for relational database)
 
 ## What's next for uw-tree
-The main functionalty hasn't finished yet
+Frontend development, refine backend logic
