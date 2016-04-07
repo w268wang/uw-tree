@@ -1,116 +1,44 @@
             Term
-
             Course and Title
-            Weight 
-            Class
-            Tut
-            Lab
-
-
-
-
 
             1A Fall
-
             BME 101 Introduction to Biomedical Engineering
-            0.25
-            3
-            0
-            0
-
 
             BME 101L Computer-Aided Design
-            0.25
-            1
-            0
-            3
-
 
             BME 121 Digital Computation
-            0.50
-            3
-            1
-            3
-
 
             BME 161 Introduction to Biomedical Design
-            0.50
-            3
-            1
-            0
-
 
             BME 181 Physics I - Statics
-            0.50
-            3
-            1
-            0
-
 
             SYDE 111 Fundamental Engineering Math 1
-            0.50
-            3
-            2
-            0
 
 
             SYDE 113 Matrices and Linear Systems 
-            0.25
-            2
-            2
-            0
-
 
 
             1B Winter
 
             BME 102 Seminar
-            0.00
-            1
-            0
-            0
 
 
             BME 122 Data Structures and Algorithms
-            0.50
-            3
-            1
-            0
 
 
             BME 162 Human Factors in the Design of Biomedical and Health Systems 
-            0.50
-            3
-            1
-            0
 
 
             BME 182 Physics II - Dynamics
-            0.50
-            3
-            1
-            0
 
 
             BME 186 Chemistry Principles
-            0.50
-            3
-            1
-            0
 
 
             SYDE 112 Fundamental Engineering Math 2
-            0.50
-            3
-            2
-            0
 
 
             SYDE 114 Numerical and Applied Calculus
-            0.25
-            2
-            2
-            0
 
 
 
